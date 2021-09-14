@@ -494,7 +494,15 @@ h4{
   font-size: 15px!important;
   color: crimson!important;
 }
+.dark-after{
+  color: white!important
+}
 
 label::first-letter{
   color:red
+}
+.dark-mode{
+  position: fixed !important;
+  right: 30px;
+  top:30px
 }

@@ -3,8 +3,11 @@ import PropTypes from "prop-types";
 function Todos({ data, checkTodo, removeTodo }) {
   return (
     <li className={data.isDone ? "completed" : ""}>
-      <div className="form-check" style={{ fontFamily: "MmdBold" }}>
-        <label className="form-check-label" style={{ fontSize: "17px" }}>
+      <div className="form-check" style={{ fontFamily: "MmdReg" }}>
+        <label
+          className="form-check-label"
+          style={{ fontSize: "17px", letterSpacing: "0.7px" }}
+        >
           <input
             checked={data.isDone}
             className="checkbox"

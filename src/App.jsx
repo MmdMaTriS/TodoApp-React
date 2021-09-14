@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import AddTodoInputs from "./components/AddTodoInputs";
+import DarkMode from "./components/DarkMode";
 import Todos from "./components/Todos";
+import moon from "../public/images/moon.png";
+import sun from "../public/images/sun.png";
 
 const getTodos = [
   {
@@ -50,14 +53,34 @@ function App() {
     setTodos(copyTodos);
   };
 
+  const darkMode = () => {
+    const darkModeLoc = document.getElementById("darkMode");
+    darkModeLoc.src = `${moon}`;
+    darkModeLoc.style.backgroundColor = "white";
+    darkModeLoc.style.borderRadius = "white";
+    darkModeLoc.alt = "DarkMode";
+    document.getElementsByTagName("body")[0].style.backgroundColor = "#202020";
+    document.getElementById("org-card").style.backgroundColor = "#404040";
+    document.getElementsByTagName("body")[0].style.color = "white";
+    document.getElementById("card-title").className = "dark-after";
+    document.getElementById("getInput").style.color = "white";
+  };
+
   return (
     <div className="page-content page-container" id="page-content">
+      <div className="dark-mode">
+        <DarkMode isDark={darkMode} />
+      </div>
       <div className="padding">
         <div className="row container d-flex justify-content-center">
           <div className="col-md-12">
-            <div className="card px-3">
+            <div className="card px-3" id="org-card">
               <div className="card-body">
-                <h4 className="card-title" style={{ fontFamily: "MmdBold" }}>
+                <h4
+                  className="card-title"
+                  id="card-title"
+                  style={{ fontFamily: "MmdBold" }}
+                >
                   Awesome Todo list
                 </h4>
                 <AddTodoInputs showTodo={handleShowTodo} />
