@@ -15,6 +15,7 @@ function AddTodoInputs({ showTodo }) {
     >
       <div className="add-items d-flex">
         <input
+          style={{ fontFamily: "MmdReg" }}
           value={newTodo}
           onChange={handleNewTodo}
           type="text"

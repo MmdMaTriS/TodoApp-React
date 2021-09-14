@@ -57,12 +57,15 @@ function App() {
           <div className="col-md-12">
             <div className="card px-3">
               <div className="card-body">
-                <h4 className="card-title">Awesome Todo list</h4>
+                <h4 className="card-title" style={{ fontFamily: "MmdBold" }}>
+                  Awesome Todo list
+                </h4>
                 <AddTodoInputs showTodo={handleShowTodo} />
                 <div className="list-wrapper">
                   <ul className="d-flex flex-column-reverse todo-list">
-                    {todos.map((todo) => (
+                    {todos.map((todo, id) => (
                       <Todos
+                        key={id}
                         data={todo}
                         checkTodo={handleCheckTodo}
                         removeTodo={handleRemoveTodo}
