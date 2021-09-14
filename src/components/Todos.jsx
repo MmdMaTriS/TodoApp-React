@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import AddTodoInputs from "./AddTodoInputs";
 function Todos({ data, checkTodo, removeTodo }) {
   return (
     <li className={data.isDone ? "completed" : ""}>

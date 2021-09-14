@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import PropTypes from "prop-types";
 function AddTodoInputs({ showTodo }) {
   const [newTodo, setNewTodo] = useState("");
 
@@ -36,5 +36,7 @@ function AddTodoInputs({ showTodo }) {
   );
 }
 
-AddTodoInputs.prototype = {};
+AddTodoInputs.prototype = {
+  showTodo: PropTypes.func,
+};
 export default AddTodoInputs;
