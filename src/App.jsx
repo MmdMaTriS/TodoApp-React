@@ -1,30 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AddTodoInputs from "./components/AddTodoInputs";
 import DarkMode from "./components/DarkMode";
 import Todos from "./components/Todos";
 import moon from "../public/images/moon.png";
 import sun from "../public/images/sun.png";
 
-const getTodos = [
-  {
-    id: Math.floor(Math.random() * 9000),
-    title: "Buy a new Car",
-    isDone: false,
-  },
-  {
-    id: Math.floor(Math.random() * 9000),
-    title: "Buy a new Laptop",
-    isDone: false,
-  },
-  {
-    id: Math.floor(Math.random() * 9000),
-    title: "Go to the GYM",
-    isDone: false,
-  },
-];
-
 function App() {
-  const [todos, setTodos] = useState(getTodos);
+  const [todos, setTodos] = useState(
+    JSON.parse(localStorage.getItem("todo-data")) || []
+  );
+  useEffect(() => {
+    localStorage.setItem("todo-data", JSON.stringify(todos));
+  }, [todos]);
 
   const handleCheckTodo = (id) => {
     const copyTodos = [...todos];
@@ -42,7 +29,6 @@ function App() {
       { id: Math.floor(Math.random() * 9000), title, isDone: false },
     ];
     setTodos(showNewTodos);
-    console.log(todos);
   };
 
   const handleRemoveTodo = (id) => {
