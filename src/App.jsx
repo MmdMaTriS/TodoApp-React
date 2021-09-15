@@ -55,15 +55,29 @@ function App() {
 
   const darkMode = () => {
     const darkModeLoc = document.getElementById("darkMode");
-    darkModeLoc.src = `${moon}`;
-    darkModeLoc.style.backgroundColor = "white";
-    darkModeLoc.style.borderRadius = "white";
-    darkModeLoc.alt = "DarkMode";
-    document.getElementsByTagName("body")[0].style.backgroundColor = "#202020";
-    document.getElementById("org-card").style.backgroundColor = "#404040";
-    document.getElementsByTagName("body")[0].style.color = "white";
-    document.getElementById("card-title").className = "dark-after";
-    document.getElementById("getInput").style.color = "white";
+    if (darkModeLoc.alt === "LightMode") {
+      darkModeLoc.src = `${moon}`;
+      darkModeLoc.style.backgroundColor = "white";
+      darkModeLoc.style.borderRadius = "white";
+      darkModeLoc.alt = "DarkMode";
+      document.getElementsByTagName("body")[0].style.backgroundColor =
+        "#202020";
+      document.getElementById("org-card").style.backgroundColor = "#404040";
+      document.getElementsByTagName("body")[0].style.color = "white";
+      document.getElementById("card-title").className = "dark-after";
+      document.getElementById("getInput").style.color = "white";
+    } else if (darkModeLoc.alt === "DarkMode") {
+      darkModeLoc.src = `${sun}`;
+      darkModeLoc.style.backgroundColor = "#404040";
+      darkModeLoc.style.borderRadius = "white";
+      darkModeLoc.alt = "LightMode";
+      document.getElementsByTagName("body")[0].style.backgroundColor =
+        "#f9f9fa";
+      document.getElementById("org-card").style.backgroundColor = "#fff";
+      document.getElementsByTagName("body")[0].style.color = "black";
+      document.getElementById("card-title").className = "dark-after2";
+      document.getElementById("getInput").style.color = "black";
+    }
   };
 
   return (
