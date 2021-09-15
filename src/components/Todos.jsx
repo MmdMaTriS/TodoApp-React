@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-function Todos({ data, checkTodo, removeTodo }) {
+import edit from "../../public/images/Edit.png";
+function Todos({ data, checkTodo, removeTodo, editTodo }) {
   return (
     <li className={data.isDone ? "completed" : ""}>
       <div className="form-check" style={{ fontFamily: "MmdReg" }}>
@@ -22,6 +23,18 @@ function Todos({ data, checkTodo, removeTodo }) {
         className="remove mdi mdi-close-circle-outline"
         onClick={() => removeTodo(data.id)}
       ></i>
+      <i onClick={() => editTodo(data.id, data.title)}>
+        <img
+          style={{
+            width: "20px",
+            cursor: "pointer",
+            marginLeft: "7px",
+            marginBottom: "3px",
+          }}
+          src={edit}
+          alt="edit.png"
+        />
+      </i>
     </li>
   );
 }

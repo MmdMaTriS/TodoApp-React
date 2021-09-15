@@ -53,6 +53,18 @@ function App() {
     setTodos(copyTodos);
   };
 
+  const handleEditTodo = (id, title) => {
+    const copyTodos = [...todos];
+    copyTodos.filter((copyTodo) => {
+      if (copyTodo.id === id) {
+        const newTodo = prompt("Enter a new Title", "");
+        if (!newTodo) return;
+        copyTodo.title = newTodo;
+      }
+    });
+    setTodos(copyTodos);
+  };
+
   const darkMode = () => {
     const darkModeLoc = document.getElementById("darkMode");
     if (darkModeLoc.alt === "LightMode") {
@@ -106,6 +118,7 @@ function App() {
                         data={todo}
                         checkTodo={handleCheckTodo}
                         removeTodo={handleRemoveTodo}
+                        editTodo={handleEditTodo}
                       />
                     ))}
                   </ul>
