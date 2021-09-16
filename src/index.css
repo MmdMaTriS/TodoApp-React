@@ -510,3 +510,9 @@ label::first-letter{
   color: crimson!important
 
 }
+.show-fire{
+  display: block;
+}
+.hidden-fire{
+  display: none;
+}

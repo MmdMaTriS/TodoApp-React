@@ -4,6 +4,7 @@ import DarkMode from "./components/DarkMode";
 import Todos from "./components/Todos";
 import moon from "../public/images/moon.png";
 import sun from "../public/images/sun.png";
+import Fire from "./components/Fire";
 
 function App() {
   const [todos, setTodos] = useState(
@@ -64,6 +65,8 @@ function App() {
       document.getElementsByTagName("body")[0].style.color = "white";
       document.getElementById("card-title").className = "dark-after";
       document.getElementById("getInput").style.color = "white";
+      document.getElementById("check-fire").classList.add("show-fire");
+      document.getElementById("check-fire").classList.remove("hidden-fire");
     } else if (darkModeLoc.alt === "DarkMode") {
       darkModeLoc.src = `${sun}`;
       darkModeLoc.style.backgroundColor = "#404040";
@@ -75,6 +78,8 @@ function App() {
       document.getElementsByTagName("body")[0].style.color = "black";
       document.getElementById("card-title").className = "dark-after2";
       document.getElementById("getInput").style.color = "black";
+      document.getElementById("check-fire").classList.remove("show-fire");
+      document.getElementById("check-fire").classList.add("hidden-fire");
     }
   };
 
@@ -114,6 +119,7 @@ function App() {
           </div>
         </div>
       </div>
+      <Fire />
     </div>
   );
 }

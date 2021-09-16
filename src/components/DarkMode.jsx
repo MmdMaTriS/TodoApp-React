@@ -1,6 +1,6 @@
 import React from "react";
 import sun from "../../public/images/sun.png";
-
+import PropTypes from "prop-types";
 const darkModeStyle = {
   cursor: "pointer",
   borderRadius: "50%",
@@ -18,6 +18,10 @@ const DarkMode = ({ isDark }) => {
       </div>
     </>
   );
+};
+
+DarkMode.prototype = {
+  isDark: PropTypes.func,
 };
 
 export default DarkMode;
