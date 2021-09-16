@@ -118,8 +118,8 @@ function App() {
             </div>
           </div>
         </div>
+        <Fire />
       </div>
-      <Fire />
     </div>
   );
 }
