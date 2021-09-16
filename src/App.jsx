@@ -40,7 +40,7 @@ function App() {
     setTodos(copyTodos);
   };
 
-  const handleEditTodo = (id, title) => {
+  const handleEditTodo = (id) => {
     const copyTodos = [...todos];
     copyTodos.filter((copyTodo) => {
       if (copyTodo.id === id) {

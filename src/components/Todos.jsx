@@ -23,7 +23,7 @@ function Todos({ data, checkTodo, removeTodo, editTodo }) {
         className="remove mdi mdi-close-circle-outline"
         onClick={() => removeTodo(data.id)}
       ></i>
-      <i onClick={() => editTodo(data.id, data.title)}>
+      <i onClick={() => editTodo(data.id)}>
         <img
           style={{
             width: "20px",
